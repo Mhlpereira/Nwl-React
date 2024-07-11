@@ -9,8 +9,8 @@ import { format } from "date-fns";
 interface Trip {
     id: string
     destination: string
-    start_at: string
-    end_at: string
+    starts_at: string
+    ends_at: string
     is_confirmed: boolean
 }
 
@@ -24,7 +24,7 @@ export function DestinationAndDateHeader() {
     }, [tripId])
 
     const displayedDate = trip
-    ? format(trip.start_at, "d ' de ' LLL").concat( ' até ').concat(format(trip.end_at, "d ' de ' LLL")) : null
+    ? format(trip.starts_at, "d ' de ' LLL").concat( ' até ').concat(format(trip.ends_at, "d ' de ' LLL")) : null
     
     return (
         <div className="px-4 h-16 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">
