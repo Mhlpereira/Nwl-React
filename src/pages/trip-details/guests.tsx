@@ -4,7 +4,7 @@ import { Button } from "../../components/button";
 export function Guests() {
     return (
         <div className="space-y-6">
-            <h2 className="font-semibold text-xl">Links importantes</h2>
+            <h2 className="font-semibold text-xl">Selecionar convidados</h2>
             <div className="space-y-5">
                 <div className="flex items-center justify-between">
                     <div className="space-y-1.5">

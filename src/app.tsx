@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/trip/123",
+    path: "/trips/:tripid",
     element: <TripDetailsPage/>
   },
 ]);
