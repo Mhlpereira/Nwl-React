@@ -15,7 +15,7 @@ export function CreateActivityModal({
 
     const {tripId} = useParams()
 
-    function createActivity( event: FormEvent<HTMLFormElement>){
+    async function createActivity( event: FormEvent<HTMLFormElement>){
         event.preventDefault()
 
         const data = new FormData(event.currentTarget)
@@ -23,12 +23,13 @@ export function CreateActivityModal({
         const title = data.get('title')?.toString()
         const occurs_at = data.get('occurs_at')?.toString()
 
-        api.post(`/trips/${tripId}/activities`, {
+        await api.post(`/trips/${tripId}/activities`, {
             title,
             occurs_at
         })
 
-       closeCreateActivyModal()
+
+       window.location.reload()
     }
 
     return (
@@ -63,7 +64,7 @@ export function CreateActivityModal({
                         </div>
                     </div>
 
-                    <Button variant="primary" size="full">
+                    <Button type="submit" variant="primary" size="full">
                         Salvar atividade
                         <Plus className="size-5" />
                     </Button>
